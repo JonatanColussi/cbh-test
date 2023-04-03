@@ -16,3 +16,33 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+1. Add the 'external_id' column in the database and entities
+   * complexity: low
+   * story points: 2
+   * steps:
+     - add the external_id field on the agents table
+     - the field should be a varchar(255) nullable
+     - change the entity to add the field
+     - generate the database migration
+2. Modify the POST route to accepts new field (external_id)
+   * complexity: low
+   * story points: 2
+   * steps:
+     - add the new field on the validation schema, like a optional string
+     - modify the agents creation script for include the new field
+     - write tests that ensure this works properly
+3. Modify the PATCH route to accepts new field (external_id)
+   * complexity: low
+   * story points: 2
+   * steps:
+     - add the new field on the validation schema, like a optional string
+     - modify the update agents script for include the new field
+     - write tests that ensure this works properly
+4. Fix the `generateReport` function to replace from id to external_id
+   * complexity: low
+   * story points: 3
+   * steps:
+     - update the `getShiftsByFacilit` to get a new field and join to another agents metadata
+     - in the `generateReport` check if the `external_id` fields is filled, use it, else use the original id
+     - write tests that ensure this works properly

@@ -10,7 +10,6 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-### Refactor explain
 Firstly I changed the files to TS and imported my default configs (eslint, prettier and tsconfig) and configure ts-jest preset for run TS tests.
 
 1. I created a separate function to do the hashing, to be reused twice
